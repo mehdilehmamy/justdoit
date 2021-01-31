@@ -15,15 +15,18 @@ export default function TodoInput (props) {
     }
 
     return (
-        
-        <div className="todoInput">
+        <div className="inputContainer">
+            <div className="todoInput">
          <input 
             type="text" 
             name="todo" 
             placeholder="Enter a task..." 
             value={task} 
             onChange={handleChange}
+            autoComplete="off"
         />
+        </div>
+        
         <AddCircleIcon onClick={addItem} className="addBttn"/>
         </div> 
     );

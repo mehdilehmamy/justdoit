@@ -1,21 +1,20 @@
 import React, {useState} from "react";
 import moment from "moment";
-import { Fade } from '@material-ui/core';
 
 //Greeting Settings
 let greeting = ""; 
 function greetUser() {
     let currentTime = new Date();
        if (currentTime.getHours() < 12) {
-           greeting = "Good morning, Mehdi.";
+           greeting = "Good morning, ";
        } else if (currentTime.getHours() < 18) {
-        greeting = "Good afternoon, Mehdi.";
+        greeting = "Good afternoon, ";
        } else {
-        greeting = "Good evening, Mehdi.";
+        greeting = "Good evening, ";
        }
 }
 
-export default function Header () {
+export default function Header (props) {
 
     greetUser();
     const [time, setTime] = useState(moment().format("MMMM Do YYYY, HH:mm"));
@@ -26,11 +25,7 @@ export default function Header () {
 
 
     return <header>
-        <Fade in={true} timeout={{enter: 1500, exit:500}}>
-          <div>
-            <h1>{greeting}</h1>
+            <h1>{greeting} {props.name}.</h1>
             <p>{time}</p>
-          </div>
-        </Fade>   
     </header>
 }

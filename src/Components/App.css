@@ -5,7 +5,6 @@
 }
 
 body {
-  /* background-image: linear-gradient(120deg, #1a1c20 0%, #121013 100%); */
   background-color: #1a1c20;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -167,10 +166,13 @@ input[type="checkbox"] {
   position: absolute;
   right: 10px;
   cursor: pointer;
+  color: #23689b;
 }
 
 .trash-icon:hover{
-  color:  #1a1c20;
+  color: #38afc4;
+  transition: all .2s ease-out;
+  transform: scale(1.2);
 }
 
 .itemChecked {
@@ -195,4 +197,51 @@ input[type="checkbox"] {
 .itemChecked li {
   margin-left: 6px;
   text-decoration: line-through;
+}
+
+/* Mobile version */
+
+@media screen and (max-width: 650px) {
+  .prompt {
+    padding: 1rem;
+    max-width: 80%;
+    min-height: 30vh;
+  }
+  .prompt input {
+    width: 90%;
+  }
+  .prompt h1 {
+    font-size: 1.3rem;
+  }
+
+  header {
+    padding: 10%;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  header p {
+    margin-top: 0.7rem;
+  }
+  .todoInput input {
+    font-size: 1rem;
+    width: 70%;
+    min-height: 2.5rem;
+  }
+  .addBttn {
+    position: static;
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .todo-item {
+    min-width: 70%;
+  }
+  
+  .itemChecked {
+    min-width: 70%;
+  }
+  
 }
